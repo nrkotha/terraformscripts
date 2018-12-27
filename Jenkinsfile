@@ -6,6 +6,7 @@ node(label) {
     }
 	stage('Plan') {
         echo 'Plan' 
+		 echo 'Plan'
     }
 	
 	stage('Apply') {
