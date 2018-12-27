@@ -1,4 +1,4 @@
-def label = "aks-nodepool1-42664074-2"
+def label = "aks-nodepool1-42664074-1"
 node { 
     stage('init') {
         echo 'init' 
@@ -11,3 +11,4 @@ node {
         echo 'Apply' 
     }
 }
+
