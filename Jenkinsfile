@@ -10,7 +10,8 @@ node(label) {
     }
 	
 	stage('Apply') {
-        echo 'Apply' 
+        echo 'Apply'
+		echo 'Apply' 	
     }
 }
 
