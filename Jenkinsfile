@@ -12,7 +12,7 @@ pipeline {
         stage('init') {
             steps {
                 echo 'init..'
-				sh 'sudo /var/jenkins_home/workspace/terraformscripts/terraform init'
+				sh 'terraform init'
             }
         }
         stage('Test') {
