@@ -1,5 +1,5 @@
 def label = "linux"
-node { 
+node(label) { 
     stage('init') {
         echo 'init' 
     }
