@@ -1,4 +1,4 @@
-def label = "aks-nodepool1-42664074-1"
+def label = "linux"
 node { 
     stage('init') {
         echo 'init' 
