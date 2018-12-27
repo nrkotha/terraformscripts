@@ -1,10 +1,18 @@
 pipeline {
     agent any
-
+	
     stages {
-        stage('Build') {
+		
+		stage('Checkout code') {
+        steps {
+            checkout scm
+        }
+    }
+		
+        stage('init') {
             steps {
-                echo 'Building..'
+                echo 'init..'
+				sh './terraform init'
             }
         }
         stage('Test') {
