@@ -10,9 +10,10 @@ pipeline {
     }
 		
         stage('init') {
-            steps {
-                echo 'init..'
-				sh 'terraform init'
+            container('terraform-az') {
+                // Initialize the plan 
+                sh  "terraform init -input=false"
+                  
             }
         }
         stage('Test') {
