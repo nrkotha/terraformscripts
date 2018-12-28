@@ -22,7 +22,8 @@ pipeline {
 		
         stage('init') {
             steps {
-                echo 'Initialize..'
+				echo '${TERRAFORM_STORAGE_ACCOUNT_NAME}'
+                //sh 'terraform init'
             }
         }
         stage('plan') {
