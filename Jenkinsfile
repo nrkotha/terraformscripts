@@ -22,8 +22,8 @@ pipeline {
 		
         stage('init') {
             steps {
-				echo 'storage name='+${TERRAFORM_STORAGE_ACCOUNT_NAME}
-                //sh 'terraform init'
+				//echo 'storage name='+${TERRAFORM_STORAGE_ACCOUNT_NAME}
+                sh 'az storage container create -n devtfstate --account-name ${TERRAFORM_STORAGE_ACCOUNT_NAME} --account-key ${TERRAFORM_STORAGE_ACCOUNT_KEY}'
             }
         }
         stage('plan') {
