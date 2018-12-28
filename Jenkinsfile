@@ -9,21 +9,25 @@ pipeline {
         }
     }
 		
+        stage('Set Terraform path') {
+        steps {
+            script{
+				def tfHome= tool name: 'Terrafrom'
+				env.PATH=${tfHome}:${env.APTH}
+			}
+			sh 'terrafrom - version'
+        }
+    }
+		
+		
         stage('init') {
-            container('terraform-az') {
-                // Initialize the plan 
-                sh  "terraform init -input=false"
-                  
+            steps {
+                echo 'Initialize..'
             }
         }
-        stage('Test') {
+        stage('plan') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                echo 'Planning....'
             }
         }
     }
