@@ -22,6 +22,7 @@ pipeline {
 		
         stage('init') {
             steps {
+				sh 'docker run -it microsoft/azure-cli'
 				//echo 'storage name='+${TERRAFORM_STORAGE_ACCOUNT_NAME}
 				sh 'az --version'
 				
